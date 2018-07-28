@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity {
         for (int i = 0; i < 100; i++){
             voteResults.add(new VoteResult("유럽여행 꼭 가고싶어요" + i));
         }
-        voteListAdapter = new VoteListAdapter(voteResults);
+        voteListAdapter = new VoteListAdapter(voteResults, getApplicationContext());
         mRecyclerView.setAdapter(voteListAdapter);
     }
 }
