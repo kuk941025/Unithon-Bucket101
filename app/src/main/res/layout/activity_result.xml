@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ResultActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#e9e9e9"
+        android:elevation="2dp"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/result_profile_pic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="#bbbbbb"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/result_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/result_profile_pic"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"
+            android:text="제이슨"/>
+        <Button
+            android:id="@+id/result_btn_option"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_toRightOf="@id/result_name"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/result_profile_pic"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/result_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

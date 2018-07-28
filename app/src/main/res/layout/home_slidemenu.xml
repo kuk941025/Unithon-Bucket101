@@ -4,13 +4,89 @@
     android:orientation="vertical"
     android:layout_width="280dp"
     android:layout_height="match_parent"
-    android:weightSum="100"
-    android:gravity="center"
     android:layout_gravity="start"
-    android:background="#e49e9e">
-        <TextView
-            android:layout_width="wrap_content"
+    android:gravity="center|top"
+    android:background="#f3f3f3">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="45dp"
+            android:src="#939393"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Slide"
-            android:textColor="#000"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/slide_menu_text_name"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="제이슨"
+                    android:textColor="#000"/>
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="190dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="#707070"/>
+        
+        <TextView
+            android:id="@+id/slide_menu_home"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="18dp"
+            android:text="홈"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            />
+        <TextView
+            android:id="@+id/slide_menu_progress_bucket"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="20dp"
+            android:text="진행중 버켓"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            />
+        <TextView
+            android:id="@+id/slide_menu_like_bucket"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="20dp"
+            android:text="좋아요 버켓"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            />
+        <TextView
+            android:id="@+id/slide_menu_personal_bucket"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="20dp"
+            android:text="내가 쓴 버켓"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            />
 </LinearLayout>

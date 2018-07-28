@@ -31,6 +31,7 @@ public class TestActivity extends AppCompatActivity {
         listItems.add(PopupActivity.class);
         listItems.add(RankingActivity.class);
         listItems.add(RecommendActivity.class);
+        listItems.add(ResultActivity.class);
 
 
         ListView lv = (ListView)findViewById(R.id.test_listview);
