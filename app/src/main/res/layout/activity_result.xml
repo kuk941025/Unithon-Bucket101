@@ -11,6 +11,7 @@
         android:layout_height="220dp"
         android:elevation="2dp"
         >
+        
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,7 +21,12 @@
             android:id="@+id/result_btn_go_back"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="15dp"
+            android:src="@drawable/btn_goback"
             />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/result_profile_pic"
             android:layout_width="120dp"
