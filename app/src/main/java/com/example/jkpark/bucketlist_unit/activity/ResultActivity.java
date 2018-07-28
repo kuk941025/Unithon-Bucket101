@@ -10,8 +10,10 @@ import com.example.jkpark.bucketlist_unit.R;
 import com.example.jkpark.bucketlist_unit.adapter.BucketListAdapter;
 import com.example.jkpark.bucketlist_unit.adapter.VoteListAdapter;
 import com.example.jkpark.bucketlist_unit.model.VoteResult;
+import com.example.jkpark.bucketlist_unit.model.VoteResultPic;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ResultActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -30,10 +32,25 @@ public class ResultActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         voteResults = new ArrayList<>();
-        for (int i = 0; i < 100; i++){
-            voteResults.add(new VoteResult("유럽여행 꼭 가고싶어요" + i));
-        }
         voteListAdapter = new VoteListAdapter(voteResults, getApplicationContext());
+        Random rand = new Random();
+        for (int i = 0; i < 100; i++){
+            ArrayList<VoteResultPic> voteResultPics = new ArrayList<>();
+            voteResults.add(new VoteResult("유럽여행 꼭 가고싶어요" + i));
+            int num = rand.nextInt(5);
+            int j = 0;
+            for (; j < num ; j++){
+                voteResultPics.add(new VoteResultPic(j, "Y"));
+            }
+            for (; j < 5; j++){
+                voteResultPics.add(new VoteResultPic(j, ""));
+            }
+            voteListAdapter.setVoteResults(voteResultPics, i);
+        }
+
+        voteListAdapter.notifyDataSetChanged();
+
         mRecyclerView.setAdapter(voteListAdapter);
+
     }
 }
