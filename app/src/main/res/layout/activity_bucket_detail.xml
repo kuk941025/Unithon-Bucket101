@@ -82,7 +82,19 @@
             android:layout_marginBottom="15dp"
             />
     </RelativeLayout>
-    <include
-        layout="@layout/template_detail" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <include
+            layout="@layout/template_detail" />
 
+        <include
+            layout="@layout/template_btn_lvl"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
