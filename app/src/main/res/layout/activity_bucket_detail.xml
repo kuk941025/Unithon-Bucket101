@@ -82,4 +82,7 @@
             android:layout_marginBottom="15dp"
             />
     </RelativeLayout>
+    <include
+        layout="@layout/template_detail" />
+
 </LinearLayout>
