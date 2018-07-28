@@ -162,21 +162,25 @@ public class LoginActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONObject response = jsonObject.getJSONObject("response");
 
-                global.email = response.getString("email");
+                global.userName = response.getString("name");
                 global.nickName = response.getString("name");
 
                 LoginDTO loginDTO = new LoginDTO();
-                loginDTO.setUserEmail(global.email);
-                loginDTO.setNiciName(global.nickName);
+                loginDTO.setUserName(global.userName);
+                loginDTO.setNickname(global.nickName);
 
                 Call<RepoLogin> login = loginService.put_Login("application/json", loginDTO);
                 login.enqueue(new Callback<RepoLogin>() {
                     @Override
                     public void onResponse(Call<RepoLogin> call, Response<RepoLogin> response) {
                         if(response.isSuccessful()){
+                            Log.d("test", response.body().getResult());
                             Intent mirror = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(mirror);
                         }else{
+                            Log.d("fail1", call.request().method().toString());
+                            Log.d("fail2", call.request().body().toString());
+                            Log.d("fail3", call.request().toString());
                             Toast.makeText(LoginActivity.this, "Login Fail", Toast.LENGTH_SHORT).show();
                         }
                     }

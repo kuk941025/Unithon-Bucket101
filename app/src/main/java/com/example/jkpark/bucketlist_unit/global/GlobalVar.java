@@ -5,8 +5,8 @@ import android.net.Uri;
 
 public class GlobalVar extends Application{
 
-    public String email;
     public String nickName;
+    public String userName;
 
     public Uri uri;
 }

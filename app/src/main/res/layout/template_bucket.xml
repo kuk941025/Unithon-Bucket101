@@ -3,71 +3,107 @@
     android:id="@+id/template_bucket_item"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
 
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#939393">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/template_pic"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="16dp"
-            android:src="@mipmap/ic_launcher_round"
-            />
-        <TextView
-            android:id="@+id/template_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NAME"
-            android:textSize="20dp"
-            android:layout_toRightOf="@id/template_pic"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="30dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/template_id"
-            android:text="'@asbcde * 20s"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/template_pic"
-            android:layout_marginBottom="15dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/template_likes"
-            android:layout_alignParentRight="true"
-            android:text="200 Likes"
-            android:textSize="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/template_num_days"
-            android:layout_alignParentRight="true"
-            android:text="D-12"
-            android:textSize="30dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="15dp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <TextView
-            android:id="@+id/template_bucket_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ahn nyoung ha sae yo"
-            android:layout_margin="5dp"/>
-    </RelativeLayout>
+        android:elevation="2dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/book_500_bg"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/template_pic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="16dp"
+                    android:src="@mipmap/ic_launcher_round"
+                    />
+                <TextView
+                    android:id="@+id/template_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dan kang"
+                    android:textSize="16dp"
+                    android:textColor="#ffffff"
+                    android:layout_toRightOf="@id/template_pic"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="23dp"/>
+                <TextView
+                    android:id="@+id/template_bucket_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="28dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#ffffff"
+                    android:text="책 500권 읽기"/>
+                <TextView
+                    android:id="@+id/template_bucket_category"
+                    android:textColor="#ffffff"
+                    android:text="생산/취미"
+                    android:layout_below="@id/template_bucket_title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/template_likes"
+                    android:layout_alignParentRight="true"
+                    android:text="200"
+                    android:textColor="#ffffff"
+                    android:textSize="14dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"/>
+                <ImageView
+                    android:src="@drawable/bucketicon"
+                    android:layout_toLeftOf="@id/template_likes"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/template_num_days"
+                    android:layout_alignParentRight="true"
+                    android:text="D-35"
+                    android:textColor="#ffffff"
+                    android:textSize="24dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="15dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/template_bucket_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ahn nyoung ha sae yo"
+                    android:layout_margin="5dp"/>
+            </RelativeLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

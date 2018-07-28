@@ -1,22 +1,22 @@
 package com.example.jkpark.bucketlist_unit.DTO;
 
 public class LoginDTO {
-    private String userEmail;
-    private String niciName;
+    private String userName;
+    private String nickname;
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setUserName(String userEmail) {
+        this.userName = userEmail;
     }
 
-    public String getNiciName() {
-        return niciName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNiciName(String niciName) {
-        this.niciName = niciName;
+    public void setNickname(String niciName) {
+        this.nickname = niciName;
     }
 }
