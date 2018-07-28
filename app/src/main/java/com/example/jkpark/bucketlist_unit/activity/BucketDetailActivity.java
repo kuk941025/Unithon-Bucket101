@@ -57,7 +57,7 @@ public class BucketDetailActivity extends AppCompatActivity {
         renderer.setListItemLayout(R.layout.tmpl_list_item);
         String content = serialized;
         EditorContent Deserialized = renderer.getContentDeserialized(content);
-        renderer.render(Deserialized);
+        if (Deserialized != null) renderer.render(Deserialized);
 
     }
 
