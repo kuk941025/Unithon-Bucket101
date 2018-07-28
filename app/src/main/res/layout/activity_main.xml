@@ -14,69 +14,77 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginLeft="11dp"
-            android:layout_marginTop="5dp"
-            android:weightSum="2"
-            android:orientation="horizontal">
-            <RelativeLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
-                android:background="#e3e3e3">
-                <TextView
-                    android:id="@+id/main_text_target"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="이번달 리워드 금액"
-                    android:textSize="12sp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_centerInParent="true"
-                    />
-                <TextView
-                    android:id="@+id/main_text_target_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="28dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_centerInParent="true"
-                    android:text="1,110,000"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginLeft="3dp"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#e3e3e3">
-                <TextView
-                    android:id="@+id/main_text_reward"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="리워드 디에이"
-                    android:textSize="12sp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_centerInParent="true"
-                    />
-                <TextView
-                    android:id="@+id/main_text_reward_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="28dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_centerInParent="true"
-                    android:text="D-11"/>
-
-            </RelativeLayout>
-        </LinearLayout>
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_pattern"/>
+        <android.support.v7.widget.CardView
+            android:id="@+id/home_cardview"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:elevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="시즌 종료 시점"/>
+                    <TextView
+                        android:id="@+id/home_txt_remain_days"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="D-17"
+                        android:textSize="36dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold"
+                        android:textColor="#ff7f68"/>
+                </LinearLayout>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="이번달 리워드"/>
+                    <TextView
+                        android:id="@+id/home_Txt_reward"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="110K"
+                        android:textSize="36dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold"
+                        android:textColor="#636cff"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <RelativeLayout
+            android:layout_below="@id/home_cardview"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal">
@@ -90,16 +98,28 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="16dp"></Spinner>
 
-            <Button
+            <ImageView
+                android:backgroundTintMode="@android:color/transparent"
                 android:layout_alignParentRight="true"
                 android:layout_weight="2"
                 android:layout_marginRight="20dp"
                 android:id="@+id/main_btn_show_sort"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="36dp"
+                android:src="@drawable/list_icon"
                 android:layout_gravity="right"/>
         </RelativeLayout>
 
+
+
+
+
+        </RelativeLayout>
+        
+        
+        
+        
+        
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
