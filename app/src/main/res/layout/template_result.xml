@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/template_result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="유럽여행 꼭 가고싶습니다."
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        />
+    <LinearLayout
+        android:id="@+id/template_result_pic_layout"
+        android:layout_width="wrap_content"
+        android:scrollbars="horizontal"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp">
+        
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_margin="7dp"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:src="#e2e2e2"/>
+    </LinearLayout>
+</LinearLayout>

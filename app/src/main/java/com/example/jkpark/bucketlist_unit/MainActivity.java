@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adpater = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arraySpinner);
         adpater.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSort.setAdapter(adpater);
+
+
         for (int i = 0; i < 100; i++)
             buckets.add(new Bucket(String.valueOf(i)));
         bucketListAdapter = new BucketListAdapter(buckets);
