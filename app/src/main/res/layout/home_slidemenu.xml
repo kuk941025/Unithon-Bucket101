@@ -21,7 +21,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="45dp"
-            android:src="#939393"
+            android:src="@drawable/thisiskang"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,13 +41,13 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/seticon"
-
                     android:layout_marginLeft="10dp"/>
         </LinearLayout>
         <View
             android:layout_width="190dp"
             android:layout_height="2dp"
             android:layout_marginTop="15dp"
+            android:elevation="2dp"
             android:background="#ffffff"/>
 
 
@@ -72,7 +72,7 @@
             android:layout_height="40dp"
 
             android:layout_marginTop="20dp"
-            android:text="진행중 버켓"
+            android:text="101 명예 버킷"
             android:textColor="#ffffff"
             android:textSize="24dp"
             android:gravity="center"
@@ -86,7 +86,7 @@
             android:layout_height="40dp"
             android:textColor="#ffffff"
             android:layout_marginTop="20dp"
-            android:text="좋아요 버켓"
+            android:text="MY PICK 버킷"
             android:textSize="24dp"
             android:gravity="center"
             android:clickable="true"
@@ -99,7 +99,7 @@
             android:layout_height="40dp"
             android:textColor="#ffffff"
             android:layout_marginTop="20dp"
-            android:text="내가 쓴 버켓"
+            android:text="MY 버킷"
             android:textSize="24dp"
             android:gravity="center"
             android:clickable="true"
