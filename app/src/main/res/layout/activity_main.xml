@@ -24,8 +24,7 @@
         android:weightSum="100"
         android:gravity="center"
         android:layout_gravity="start"
-        android:background="#e49e9e"
-    >
+        android:background="#e49e9e">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
