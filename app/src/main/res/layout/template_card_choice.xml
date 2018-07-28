@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="290dp"
-        android:layout_height="270dp"
+        android:layout_height="200dp"
         android:orientation="vertical">
         <TextView
             android:layout_marginTop="10dp"
             android:id="@+id/template_card_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카드 이름"
+            android:text="농협 올원 카드"
             android:textSize="16dp"
             />
         <ImageView

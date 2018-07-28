@@ -32,7 +32,7 @@ public class TestActivity extends AppCompatActivity {
         listItems.add(RankingActivity.class);
         listItems.add(RecommendActivity.class);
         listItems.add(ResultActivity.class);
-
+        listItems.add(PayActivity.class);
 
         ListView lv = (ListView)findViewById(R.id.test_listview);
         ArrayAdapter<Class> Adapter = new ArrayAdapter<Class>(this, android.R.layout.simple_list_item_1, listItems);
