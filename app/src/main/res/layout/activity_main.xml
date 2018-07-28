@@ -17,20 +17,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:weightSum="100"
-        android:gravity="center"
-        android:layout_gravity="start"
-        android:background="#e49e9e">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Slide"
-            android:textColor="#000"/>
 
+    <include
+        android:id="@+id/slide_menu"
+        layout="@layout/home_slidemenu"
+        />
 
-    </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
