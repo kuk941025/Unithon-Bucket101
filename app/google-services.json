@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1044506815304",
+    "firebase_url": "https://unithon-buchek101.firebaseio.com",
+    "project_id": "unithon-buchek101",
+    "storage_bucket": "unithon-buchek101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044506815304:android:6b6607106c859310",
+        "android_client_info": {
+          "package_name": "com.example.jkpark.bucketlist_unit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044506815304-fhn7kmtk3medsebvimov51pvgu3h3rdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaJBZK2JLmJTDJ6ksv-AHG_YReXQz_nUc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
