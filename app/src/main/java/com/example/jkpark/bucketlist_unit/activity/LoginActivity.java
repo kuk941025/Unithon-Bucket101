@@ -9,14 +9,22 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.jkpark.bucketlist_unit.DTO.LoginDTO;
 import com.example.jkpark.bucketlist_unit.MainActivity;
 import com.example.jkpark.bucketlist_unit.R;
+import com.example.jkpark.bucketlist_unit.Repo.Login.RepoLogin;
 import com.example.jkpark.bucketlist_unit.global.GlobalVar;
 import com.nhn.android.naverlogin.OAuthLogin;
 import com.nhn.android.naverlogin.OAuthLoginHandler;
 import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 
 import org.json.JSONObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,6 +48,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private OAuthLoginButton mOAuthLoginButton;
 
+    Retrofit loginRetrofit;
+    RepoLogin.ApiService loginService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
 
         mContext = this;
         global = (GlobalVar) getApplicationContext();
+
+        loginRetrofit = new Retrofit.Builder().baseUrl(RepoLogin.ApiService.API_URL_AUTH)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        loginService = loginRetrofit.create(RepoLogin.ApiService.class);
 
         initData();
         initView();
@@ -146,11 +161,33 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONObject response = jsonObject.getJSONObject("response");
-                global.email = response.getString("email");
-                //일단은 이메일만 사용 합시다.
 
-                Intent mirror = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(mirror);
+                global.email = response.getString("email");
+                global.nickName = response.getString("name");
+
+                LoginDTO loginDTO = new LoginDTO();
+                loginDTO.setUserEmail(global.email);
+                loginDTO.setNiciName(global.nickName);
+
+                Call<RepoLogin> login = loginService.put_Login("application/json", loginDTO);
+                login.enqueue(new Callback<RepoLogin>() {
+                    @Override
+                    public void onResponse(Call<RepoLogin> call, Response<RepoLogin> response) {
+                        if(response.isSuccessful()){
+                            Intent mirror = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(mirror);
+                        }else{
+                            Toast.makeText(LoginActivity.this, "Login Fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RepoLogin> call, Throwable t) {
+                        Toast.makeText(LoginActivity.this, "Login Fail", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
             catch (Exception e){
                 e.printStackTrace();
