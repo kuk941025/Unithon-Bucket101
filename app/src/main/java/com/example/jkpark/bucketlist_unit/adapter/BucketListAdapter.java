@@ -18,7 +18,7 @@ public class BucketListAdapter extends RecyclerView.Adapter<BucketListAdapter.Vi
         public TextView name;
         public ViewHolder(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.template_bucket_title);
+            name = (TextView)itemView.findViewById(R.id.template_bucket_title);
         }
     }
 

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRecylerView = findViewById(R.id.home_bucket_recyclerview);
+        mRecylerView = (RecyclerView)findViewById(R.id.home_bucket_recyclerview);
         mRecylerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecylerView.setLayoutManager(mLayoutManager);
