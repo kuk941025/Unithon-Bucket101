@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -39,10 +40,14 @@ public class MakeBucketActivity extends AppCompatActivity {
 
     Editor editor;
 
+    GlobalVar global;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_bucket);
+
+        global = (GlobalVar)getApplicationContext();
 
         editor = (Editor) findViewById(R.id.editor);
         setUpEditor();
@@ -158,14 +163,21 @@ public class MakeBucketActivity extends AppCompatActivity {
             @Override
             public void onUpload(Bitmap image, String uuid) {
 
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                image.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-                byte[] byteArray = byteArrayOutputStream.toByteArray();
+//                BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+//                bmOptions.inSampleSize = 4;
+//
+//                image = Bitmap.createScaledBitmap(image, Integer.parseInt(String.valueOf(Math.round(image.getWidth() * 0.1))), Integer.parseInt(String.valueOf(Math.round(image.getHeight() * 0.1))), true);
+//
+//                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//                image.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+//                byte[] byteArray = byteArrayOutputStream.toByteArray();
+//
+//                String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
-                String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+//                encoded = new StringBuilder(encoded).insert(0, "data:image/jpeg;base64,").toString();
 
                 Toast.makeText(MakeBucketActivity.this, uuid, Toast.LENGTH_LONG).show();
-                editor.onImageUploadComplete(encoded, uuid);
+                editor.onImageUploadComplete(global.uri.toString(), uuid);
                 // editor.onImageUploadFailed(uuid);
             }
         });
@@ -178,7 +190,10 @@ public class MakeBucketActivity extends AppCompatActivity {
                 Retrieve the content as serialized, you could also say getContentAsHTML();
                 */
                 String text = editor.getContentAsSerialized();
-                Log.d("test", text);
+
+                Intent intent = new Intent(getApplicationContext(), BucketDetailActivity.class);
+                intent.putExtra("content", text);
+                startActivity(intent);
 
                 //text안에 데이터들이 싹다 저장이 됨. 이걸 이제 서버에 저장하면 되는거임!
             }
@@ -197,9 +212,10 @@ public class MakeBucketActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == editor.PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-            Uri uri = data.getData();
+            global.uri = data.getData();
+//            Log.d("uri", uri.toString());
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), global.uri);
                 editor.insertImage(bitmap);
             } catch (IOException e) {
                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
