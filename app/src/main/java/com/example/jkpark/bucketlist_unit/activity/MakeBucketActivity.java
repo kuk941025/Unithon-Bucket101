@@ -33,7 +33,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import jp.wasabeef.richeditor.RichEditor;
 
 
 public class MakeBucketActivity extends AppCompatActivity {

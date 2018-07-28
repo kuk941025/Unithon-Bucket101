@@ -30,13 +30,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
                     android:layout_margin="16dp"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@drawable/thisiskang"
                     />
                 <TextView
                     android:id="@+id/template_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="dan kang"
+                    android:text="jason"
                     android:textSize="16dp"
                     android:textColor="#ffffff"
                     android:layout_toRightOf="@id/template_pic"
