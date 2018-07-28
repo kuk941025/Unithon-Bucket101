@@ -27,7 +27,6 @@ public class TestActivity extends AppCompatActivity {
         listItems.add(SplashActivity.class);
         listItems.add(MakeBucketActivity.class);
         listItems.add(BucketDetailActivity.class);
-
         listItems.add(PopupActivity.class);
         listItems.add(RankingActivity.class);
         listItems.add(RecommendActivity.class);
