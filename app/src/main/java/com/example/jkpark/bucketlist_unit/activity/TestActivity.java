@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.jkpark.bucketlist_unit.MainActivity;
 import com.example.jkpark.bucketlist_unit.R;
 
+
 import java.util.ArrayList;
 
 public class TestActivity extends AppCompatActivity {
@@ -27,13 +28,12 @@ public class TestActivity extends AppCompatActivity {
         listItems.add(SplashActivity.class);
         listItems.add(MakeBucketActivity.class);
         listItems.add(BucketDetailActivity.class);
-        listItems.add(BucketDetailActivity.class);
         listItems.add(PopupActivity.class);
         listItems.add(RankingActivity.class);
         listItems.add(RecommendActivity.class);
 
 
-        ListView lv = findViewById(R.id.test_listview);
+        ListView lv = (ListView)findViewById(R.id.test_listview);
         ArrayAdapter<Class> Adapter = new ArrayAdapter<Class>(this, android.R.layout.simple_list_item_1, listItems);
 
         lv.setAdapter(Adapter);
