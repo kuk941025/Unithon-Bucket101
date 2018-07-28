@@ -36,7 +36,8 @@
         <activity android:name=".activity.BucketDetailActivity" />
         <activity android:name=".activity.RankingActivity" />
         <activity android:name=".activity.BucketProgressActivity" />
-        <activity android:name=".activity.ResultActivity"></activity>
+        <activity android:name=".activity.ResultActivity" />
+        <activity android:name=".activity.PayActivity"></activity>
     </application>
 
 </manifest>

@@ -179,8 +179,6 @@ public class MakeBucketActivity extends AppCompatActivity {
                 Toast.makeText(MakeBucketActivity.this, uuid, Toast.LENGTH_LONG).show();
                 editor.onImageUploadComplete(global.uri.toString(), uuid);
                 // editor.onImageUploadFailed(uuid);
-
-                Log.d("onUpload", "123");
             }
         });
         editor.render();  // this method must be called to start the editor
@@ -192,8 +190,6 @@ public class MakeBucketActivity extends AppCompatActivity {
                 Retrieve the content as serialized, you could also say getContentAsHTML();
                 */
                 String text = editor.getContentAsSerialized();
-
-                Log.d("content", text);
 
                 Intent intent = new Intent(getApplicationContext(), BucketDetailActivity.class);
                 intent.putExtra("content", text);

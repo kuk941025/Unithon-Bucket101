@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_margin="10dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:background="@drawable/border"
+
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:id="@+id/template_txt_lvl"
+            android:text="2단계:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"/>
+        <TextView
+            android:id="@+id/template_txt_lvl_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/template_txt_lvl"
+            android:text="유럽여행 꼭 가고싶습니다"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,15 +1,17 @@
 package com.example.jkpark.bucketlist_unit.activity;
 
+import android.content.DialogInterface;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.jkpark.bucketlist_unit.R;
+import com.example.jkpark.bucketlist_unit.adapter.CustomDialogNoticeRank;
 import com.github.irshulx.Editor;
 import com.github.irshulx.models.EditorContent;
 
@@ -19,24 +21,31 @@ import java.util.Map;
 public class BucketDetailActivity extends AppCompatActivity {
 
     TextView html;
+    Button btnLike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bucket_detail);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         String serialized = getIntent().getStringExtra("content");
 
-//        Editor editor = new Editor(BucketDetailActivity.this, null);
-//        serialized = editor.getContentAsHTML(serialized);
-//
-//        Log.d("html", serialized);
-//
-//        html = (TextView)findViewById(R.id.bucket_detail);
-//
-//        html.setText(Html.fromHtml(serialized, Html.FROM_HTML_MODE_COMPACT));
+        btnLike = (Button)findViewById(R.id.detail_btn_like);
+        btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final CustomDialogNoticeRank dialog= new CustomDialogNoticeRank(BucketDetailActivity.this);
+                dialog.show();
+
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface) {
+
+                    }
+                });
+            }
+        });
 
         Editor renderer= (Editor)findViewById(R.id.renderer);
         Map<Integer, String> headingTypeface = getHeadingTypeface();
