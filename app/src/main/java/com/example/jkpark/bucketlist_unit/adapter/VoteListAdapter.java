@@ -56,7 +56,7 @@ public class VoteListAdapter extends RecyclerView.Adapter<VoteListAdapter.ViewHo
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(300, 400);
             lp.setMarginStart(25);
             image.setLayoutParams(lp);
-            image.setBackgroundColor(Color.GRAY);
+            image.setBackgroundColor(Color.parseColor("#80d8d8d8"));
             holder.layout.addView(image);
         }
 
